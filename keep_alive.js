@@ -1,14 +1,5 @@
-const express = require('express');
-const server = express();
- 
-server.all('/', (req, res) => {
-  res.send(`OK`)
-})
- 
-function keepAlive() {
-  server.listen(3000, () => { console.log("Server is Ready!!" + Date.now()) });
-}
- 
-module.exports = keepAlive;
-
-//keep alive script was made by cpt.motchy
+http = require('http');
+http.createServer(function (req, res) {
+  res.write("I'm alive");
+  res.end();
+}).listen(8080);
